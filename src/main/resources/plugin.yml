@@ -7,3 +7,4 @@ description: Logs raids on the server to file, support commands
 commands:
   raidlog:
     description: Display all raidlogs
+    permission: raidlogs.logs
