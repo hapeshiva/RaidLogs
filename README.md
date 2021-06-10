@@ -7,4 +7,4 @@ The best raid logger for Spigot, which allows you to watch all raids with the ex
 In next updates i plan to add other languages and config.
 
 
-SpigotMC - 
+SpigotMC - https://www.spigotmc.org/resources/raidlogs.93155/
