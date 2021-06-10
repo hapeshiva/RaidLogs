@@ -1,0 +1,9 @@
+name: RaidLogs
+version: ${project.version}
+main: hapesh.raidlogs.Main
+api-version: 1.16
+authors: [ hapeshiva ]
+description: Logs raids on the server to file, support commands
+commands:
+  raidlog:
+    description: Display all raidlogs
