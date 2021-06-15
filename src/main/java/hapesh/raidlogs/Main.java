@@ -27,7 +27,6 @@ public class Main extends JavaPlugin implements Listener, CommandExecutor, TabCo
     @Override
     public void onEnable() {
         File raidlog = new File("raids.log");
-
         try {
             raidlog.createNewFile();
             System.out.println("File created");
@@ -40,19 +39,23 @@ public class Main extends JavaPlugin implements Listener, CommandExecutor, TabCo
         getCommand("raidlog").setExecutor(this);
         getCommand("raidlog").setTabCompleter(this);
         try {
-            fileLog = new FileHandler("raids.log");
+            fileLog = new FileHandler("raids.log", 0, 1, true);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     @Override
     public void onDisable() {
-        FileHandler fileLog = null;
+        File shit = new File("raids.log.1");
+        shit.deleteOnExit();
+        File shitlck = new File("raids.log.lck");
+        shitlck.deleteOnExit();
         try {
-            fileLog = new FileHandler("raids.log");
+            fileLog = new FileHandler("raids.log", 0, 1, true);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        getLogger(fileLog).removeHandler(fileLog);
         fileLog.close();
         System.out.println("RaidLogs disabled, bye!");
     }
